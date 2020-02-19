@@ -13,17 +13,7 @@ get "/" do
   # show a view that asks for the location
 
    
-    <title>Geocoding</title>
-  </head>
-  <body>
-
-    <div class="container mt-5">
-      <h1>Geocoding</h1>
-      <form action="/map">
-        <input type="text" name="q">
-        <button type="submit">Go there</submit>
-        </form>
-    </div>
+   
 
     
   view "app"
