@@ -23,7 +23,16 @@ get "/map" do
     results = Geocoder.search(params["q"])
     lat_long = results.first.coordinates # => [lat, long]
     "#{lat_long[0]}, #{lat_long[1]}"
+    @forecast = ForecastIO.forecast(lat_long[0], lat_long[1]).to_hash
+     
+    #  "#{forecast}"
+    #"#{params["q"]}"
     #coordinates= "#{lat_long[0]}, #{lat_long[1]}"
+
+    url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=cb52b1ae35d447ea9481b307ce9e4799"
+    @news = HTTParty.get(url).parsed_response.to_hash    
+
+    view "ask"
 end
 
 #  get "/weather" do
@@ -37,7 +46,7 @@ end
 get "/news" do
   # do everything else
 url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=cb52b1ae35d447ea9481b307ce9e4799"
-news = HTTParty.get(url).parsed_response.to_hash
+news = HTTParty.get(url).parsed_response.to_hash    
 #news = HTTParty.get(url).params["q"].to_hash
 # news is now a Hash you can pretty print (pp) and parse for your output
 end

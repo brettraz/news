@@ -23,8 +23,30 @@
   <body>
 
     <div class="container mt-5">
-      <h1>News</h1>
+      <h1>Weather</h1>
+      <%= 5 + 5 %>
+      <%= @forecast %>
     </div>
+
+    <div>
+    <h1> News Data</h1>
+    <ul>
+        <li><%= @news["articles"][0]["title"] %></li>
+    
+        <li><%= @news["articles"][1]["title"] %></li>
+    </ul>
+
+      <ul>
+    <% for item in @news["articles"] %>
+      <li>
+      
+        <a href="<%= item["url"] %>"><%= item["title"] %></a>
+        </li>
+    <% end %>
+  </ul>
+
+    </div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
