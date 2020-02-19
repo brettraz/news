@@ -16,7 +16,7 @@ get "/" do
    
 
     
-  view "app"
+  view "geocode"
 end
 
 get "/map" do
