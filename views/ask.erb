@@ -24,17 +24,28 @@
 
     <div class="container mt-5">
       <h1>Weather</h1>
-      <%= 5 + 5 %>
-      <%= @forecast %>
+            
+    <p> The latitude is <%= @forecast["latitude"] %> and the longitude is <%= @forecast["longitude"] %>. </p>
+    <p> It is currently <%= @forecast["currently"]["temperature"] %> degrees and <%= @forecast["currently"]["summary"] %>. The chances of rain are <%= @forecast["currently"]["precipProbability"] %> percent with winds of <%= @forecast["currently"]["windSpeed"] %> mph. </p>
+     <p></p>
+     <h2>  Extended Daily Forecast </h2>
+      <ul>
+    <% for projection in @forecast["daily"]["data"] %>
+      <li>
+      The temps are expected to range between a high of <%= projection["temperatureMax"] %> degrees and a low of <%= projection["temperatureMin"] %> degrees and <%= projection["summary"] %>.
+       
+        </li>
+    <% end %>
+  </ul>
+
+    
+
+
     </div>
 
     <div>
     <h1> News Data</h1>
-    <ul>
-        <li><%= @news["articles"][0]["title"] %></li>
-    
-        <li><%= @news["articles"][1]["title"] %></li>
-    </ul>
+  
 
       <ul>
     <% for item in @news["articles"] %>
