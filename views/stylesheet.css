@@ -1,0 +1,20 @@
+p {
+     color: purple;
+     font-size: large;
+ }
+
+ body {
+     background-color: rgb(0, 255, 64);
+     font-family: 'Bangers', cursive;
+ }
+
+.thick-border {
+    border-width: thick;
+}
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+    background-color: blanchedalmond;
+    color: crimson;
+}
+
+.padding {padding-top: 20px;}
