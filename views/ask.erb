@@ -26,7 +26,7 @@
       <h1>Weather</h1>
             
     <p> The latitude is <%= @forecast["latitude"] %> and the longitude is <%= @forecast["longitude"] %>. </p>
-    <p> It is currently <%= @forecast["currently"]["temperature"] %> degrees and <%= @forecast["currently"]["summary"] %>. The chances of rain are <%= @forecast["currently"]["precipProbability"] %> percent with winds of <%= @forecast["currently"]["windSpeed"] %> mph. </p>
+    <p> It is currently <%= @forecast["currently"]["temperature"] %> degrees and <%= @forecast["currently"]["summary"] %>. The chances of precipitation today are <%= @forecast["daily"]["data"][0]["precipProbability"] * 100 %> percent with current winds of <%= @forecast["currently"]["windSpeed"] %> mph. </p>
      <p></p>
      <h2>  Extended Daily Forecast </h2>
       <ul>
