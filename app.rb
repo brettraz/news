@@ -35,6 +35,8 @@ get "/map" do
     view "ask"
 end
 
+
+
 #  get "/weather" do
 
 # results = Geocoder.search(params["q"])
